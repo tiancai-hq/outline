@@ -20,6 +20,10 @@ router.get('jwtgeneric.callback', auth({ required: false }), async ctx => {
   const teamName = payload.teamName;
 
   const avatarUrl = payload.avatar || "https://tc-beta-cdn-imgs.oss-cn-hongkong.aliyuncs.com/outline/defaults/profile-001.png";
+  console.log("avatarUrl:",avatarUrl);
+  console.log("payload.avatar:",payload.avatar);
+  console.log("payload:",payload);
+  
 
   const [team, isFirstUser] = await Team.findOrCreate({
     where: {
